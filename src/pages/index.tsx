@@ -22,11 +22,11 @@ export default function Home({ product }: HomeProps) {
       </Head>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
-          <span>👏Hey, welcome</span>
-          <h1>News about the <span>React</span> world</h1>
+          <span>👏Ola, Bem vindo</span>
+          <h1>Novidades sobre o universo <span>React</span></h1>
           <p>
-            Get access to all the publications <br />
-            <span>for {product.amount} mount</span>
+            Obtenha acesso completo e exclusivo <br />
+            <span>Por {product.amount} /mês</span>
           </p>
           <SubscribeButton priceId={product.priceId} />
         </section>
@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async () => {
     priceId: price.id,
     amount: price.unit_amount ? new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'usd'
+      currency: 'mzn'
     }).format(price.unit_amount / 100) : null,
   }
   return {
